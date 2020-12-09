@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Document</title>
+</head>
+<body>
+    
+    <div  class="card mid">
+		<div class="front"> 
+			<div class="inner">
+                <div class="inner2">
+                    <div id="clock"></div>:
+                    <div id="minutes"></div>:
+                    <div id="seconds"></div>
+                    <div id="zone"></div>
+                </div>
+            </div>
+		</div>
+		<div class="back">
+			<div class="inner">
+                <div class="innerin">
+                    <div class="inner2">
+                        <div id="day"></div>/
+                        <div id="month"></div>/
+                        <div id="year"></div>
+                    </div>
+                    <div id="week"></div>
+                </div>
+                    
+                
+            </div>
+		</div>
+    </div>
+    <script>     
+		var htmhours= document.getElementById('clock');
+        var htmminutes = document.getElementById('minutes');
+        var htmseconds = document.getElementById('seconds');    
+        var zone = document.getElementById('zone');
+        var day = document.getElementById('day');
+        var month = document.getElementById('month');
+        var year = document.getElementById('year');
+        var week = document.getElementById('week');
+
+        function start(){
+            var mytime = new Date();
+            var hours = mytime.getHours();
+            var minutes = mytime.getMinutes();
+            var seconds = mytime.getSeconds();
+            var zones = "AM";
+            var weeks = mytime.getDay();
+            var months = mytime.getMonth();
+            var days = mytime.getDate();
+            var years = mytime.getFullYear();
+            var array = ['Bazar','Bazar Ertəsi','Çərşənbə axşamı','Çərşənbə','Cümə axşamı','Cümə','Şənbə'];
+
+        
+                if(hours == 12){
+                    hours = 0;
+                }
+                if(hours > 12){
+                    hours = hours-12;
+                    zones = "PM"
+                }
+                if(hours < 10){
+                    hours = "0" + hours;
+                }
+                if(minutes < 10){
+                    minutes = "0" + minutes
+                }
+                if(seconds < 10){
+                    seconds = "0" + seconds
+                }
+
+                htmhours.innerHTML = hours;
+                htmminutes.innerHTML = minutes;
+                htmseconds.innerHTML = seconds;
+                zone.innerHTML = zones;
+                day.innerHTML = days;
+                month.innerHTML = months+1;
+                year.innerHTML = years;
+                week.innerHTML = array[weeks];
+
+        }
+        
+        start();
+        setInterval(start,1000);	
+    </script>
+</body>
+</html>

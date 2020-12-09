@@ -1,0 +1,98 @@
+*{
+	padding: 0px;
+	margin: 0px;
+	text-decoration: none;
+	font-family: 'MuseoModerno', cursive;
+	box-sizing: border-box;
+}
+body{
+	background: #f3f3f3
+}
+.mid{
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%,-50%);
+}
+.card{
+	cursor: pointer;
+	width: 350px;
+	height: 150px;
+
+}
+.front, .back{
+	width: 100%;
+	height: 100%;
+	overflow: hidden;
+	backface-visibility: hidden;
+    position: absolute;
+    border-radius: 30px;
+    padding: 15px;
+    background-color: black;
+	transition: transform .6s linear;
+}
+ .inner{
+    width: 100%;
+    padding: 15px 20px;
+    height: 100%;
+    border-radius: 30px;
+    background-color: rgb(234, 219, 219);
+}
+#seconds{
+    color:  red;
+    font-size: 20px;
+}
+#week{
+    color:  red;
+    font-size: 20px;
+    text-align: center;
+}
+.innerin{
+    padding: 20px;
+    width: 100%;
+    font-weight: bold;
+    font-size: 25px;
+    height: 100%;
+    border-radius: 20px;
+    background-color: rgb(123, 185, 134);
+}
+.back .inner2{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+.front .inner2{
+    padding: 20px;
+    width: 100%;
+    font-weight: bold;
+    font-size: 25px;
+    height: 100%;
+    border-radius: 20px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background-color: rgb(123, 185, 134);
+
+}
+.back{
+	
+	transform: perspective(800px) rotateX(180deg);
+}
+.front{
+	transform: perspective(800px) rotateX(0deg);
+}
+
+.card:hover  .front{
+	transform: perspective(10000px) rotateX(-180deg);
+}
+
+.card:hover  .back{
+	transform: perspective(10000px) rotateX(0deg);
+}
+
+
+
+
+
+
+
